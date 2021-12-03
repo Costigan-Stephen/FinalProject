@@ -1,6 +1,8 @@
 package com.example.finalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -32,6 +34,25 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_contacts:
+                        navController.navigate(R.id.navigation_contacts);
+                        break;
+                    case R.id.navigation_messages:
+                        navController.navigate(R.id.navigation_messages);
+                        break;
+                    case R.id.navigation_notifications:
+                        navController.navigate(R.id.navigation_notifications);
+                        break;
+                }
+                return false;
+            }
+        });
+
     }
 
 }
