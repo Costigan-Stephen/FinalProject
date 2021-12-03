@@ -116,6 +116,7 @@
         android:layout_marginTop="28dp"
         android:background="@drawable/btn_bg"
         android:text="Register"
+        android:onClick="SignInClick"
         app:iconTint="#000000"
         app:layout_constraintEnd_toEndOf="@+id/inputConfirmPassword"
         app:layout_constraintHorizontal_bias="0.0"

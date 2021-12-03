@@ -29,6 +29,11 @@
             android:parentActivityName=".MainActivity">
         </activity>
         <activity
+            android:name=".MainView"
+            android:exported="true"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
             android:name=".MessageList"
             android:exported="true"
             android:parentActivityName=".MainActivity">
