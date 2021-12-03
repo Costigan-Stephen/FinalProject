@@ -9,6 +9,7 @@
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorRed">#C11515</color>
+    <color name="colorYellow">#F3DB00</color>
     <color name="color_primary">#72d4ff</color>
     <color name="color_alternate">#005577</color>
     <color name="color_secondary">#39F8FF</color>
