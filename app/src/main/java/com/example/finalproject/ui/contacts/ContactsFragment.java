@@ -12,15 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalproject.databinding.FragmentContactsBinding;
 
-public class DashboardFragment extends Fragment {
+public class ContactsFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private ContactsViewModel contactsViewModel;
     private FragmentContactsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        contactsViewModel =
+                new ViewModelProvider(this).get(ContactsViewModel.class);
 
         binding = FragmentContactsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
