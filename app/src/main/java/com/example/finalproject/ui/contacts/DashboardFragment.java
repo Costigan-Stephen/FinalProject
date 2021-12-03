@@ -25,7 +25,7 @@ public class DashboardFragment extends Fragment {
         binding = FragmentContactsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final RecyclerView textView = binding.recyclerView;
+        //final RecyclerView textView = binding.recyclerView;
         /*dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

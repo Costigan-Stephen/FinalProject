@@ -18,8 +18,7 @@ public class MessageListFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(MessageListViewModel.class);
+        homeViewModel = new ViewModelProvider(this).get(MessageListViewModel.class);
 
         binding = FragmentMessagelistBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
