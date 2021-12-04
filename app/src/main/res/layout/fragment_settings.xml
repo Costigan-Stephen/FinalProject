@@ -8,8 +8,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="731dp"
+        android:layout_width="match_parent"
+        android:layout_height="709dp"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,8 +20,8 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="400dp"
-        android:layout_height="75dp"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
         android:background="@color/background_blue"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
