@@ -21,7 +21,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.finalproject.databinding.ActivityMainBinding;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
@@ -32,47 +32,50 @@ public class MainActivity extends FragmentActivity {
 
 
 
-//        binding = ActivityMainBinding.inflate(getLayoutInflater());
-//        setContentView(binding.getRoot());
-//
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         BottomNavigationView navView = findViewById(R.id.nav_view);
-//        // Passing each menu ID as a set of Ids because each
-//        // menu should be considered as top level destinations.
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_contacts, R.id.navigation_messages, R.id.navigation_settings)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                Fragment fragment = null;
-                switch (item.getItemId()) {
-                    case R.id.navigation_contacts:
-                        Log.i("NAV", "Contacts");
-//                        navController.navigate(R.id.navigation_contacts);
-                        fragment = new Contacts();
-                        break;
-                    case R.id.navigation_messages:
-                        Log.i("NAV", "Messages");
-                        fragment = new MessageList();
-//                        navController.navigate(R.id.navigation_messages);
-                        break;
-                    case R.id.navigation_settings:
-                        Log.i("NAV", "Settings");
-                        fragment = new Settings();
-//                        navController.navigate(R.id.navigation_settings);
-                        break;
-                }
-                FragmentManager manager = getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.nav_host_fragment_activity_main, fragment);
-                transaction.commit();
-                return false;
-            }
-        });
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+//        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(MenuItem item) {
+//                Fragment fragment = null;
+//                switch (item.getItemId()) {
+//                    case R.id.navigation_contacts:
+//                        Log.i("NAV", "Contacts");
+////                        navController.navigate(R.id.navigation_contacts);
+//                        fragment = new Contacts();
+//                        break;
+//                    case R.id.navigation_messages:
+//                        Log.i("NAV", "Messages");
+//                        fragment = new MessageList();
+////                        navController.navigate(R.id.navigation_messages);
+//                        break;
+//                    case R.id.navigation_settings:
+//                        Log.i("NAV", "Settings");
+//                        fragment = new Settings();
+////                        navController.navigate(R.id.navigation_settings);
+//                        break;
+//                }
+//                FragmentManager manager = getSupportFragmentManager();
+//                FragmentTransaction transaction = manager.beginTransaction();
+//                transaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+//                transaction.commit();
+//                return false;
+//            }
+//        });
 
     }
 
