@@ -131,7 +131,7 @@
         android:onClick="returnToLoginClick"
         android:shadowColor="@color/colorWhite"
         android:text="@string/already_have_an_account"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/color_alternate"
         app:layout_constraintEnd_toEndOf="@+id/btnRegister"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="@+id/btnRegister"

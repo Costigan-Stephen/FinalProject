@@ -121,8 +121,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="registerClick"
-            android:text="Sign Up"
-            android:textColor="@color/colorRed"
+            android:text="@string/sign_up"
+            android:textColor="@color/color_alternate"
             tools:layout_editor_absoluteX="253dp"
             tools:layout_editor_absoluteY="512dp" />
     </LinearLayout>
