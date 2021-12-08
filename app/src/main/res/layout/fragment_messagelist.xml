@@ -66,6 +66,8 @@
             android:textColor="#FFFFFF"
             android:textSize="34sp"
             app:layout_constraintEnd_toStartOf="@+id/add_message"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TextContrastCheck"
             tools:layout_conversion_absoluteHeight="45dp"

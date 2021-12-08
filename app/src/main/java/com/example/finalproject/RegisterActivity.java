@@ -15,4 +15,12 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
     }
+
+    public void returnToLoginClick(View view){
+        startActivity(new Intent(this, LoginActivity.class));
+    }
+
+    public void SignInClick(View view){
+        startActivity(new Intent(this, MainActivity.class));
+    }
 }
