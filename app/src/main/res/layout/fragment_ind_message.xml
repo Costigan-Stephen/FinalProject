@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.messagelist.MessageListFragment">
+    tools:context=".ui.message.ContactFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,34 +39,33 @@
             tools:layout_conversion_absoluteWidth="417dp" />
 
         <ImageButton
-            android:id="@+id/navigation_ind_message"
+            android:id="@+id/add_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+
             android:backgroundTint="@color/background_blue"
             android:contentDescription="@string/todo"
-            android:onClick="clickMessage"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.952"
+            android:onClick="backMessageList"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintHorizontal_bias="0.083"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.01"
-            app:srcCompat="@drawable/add_button"
+            app:srcCompat="@drawable/back_button"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
             tools:layout_conversion_absoluteHeight="70dp"
             tools:layout_conversion_absoluteWidth="70dp" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/contactName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="80dp"
-            android:text="@string/message_list"
+            android:text="ContactName"
+            android:textAlignment="textEnd"
             android:textColor="#FFFFFF"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toStartOf="@+id/navigation_ind_message"
-            app:layout_constraintHorizontal_bias="0.875"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TextContrastCheck"

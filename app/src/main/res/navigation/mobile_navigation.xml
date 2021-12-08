@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_navigation_contacts_to_navigation_settings"
             app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_contacts_to_navigation_ind_contact"
+            app:destination="@id/navigation_ind_contact" />
     </fragment>
 
     <fragment
@@ -33,6 +36,9 @@
         <action
             android:id="@+id/action_navigation_messages_to_navigation_settings"
             app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_messages_to_messageFragment"
+            app:destination="@id/navigation_ind_message" />
     </fragment>
 
     <fragment
@@ -65,5 +71,35 @@
         <action
             android:id="@+id/action_navigation_profile_to_navigation_messages"
             app:destination="@id/navigation_messages" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_ind_message"
+        android:name="com.example.finalproject.ui.message.MessageFragment"
+        android:label="MessageFragment"
+        tools:layout="@layout/fragment_ind_message">
+        <action
+            android:id="@+id/action_messageFragment_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_messageFragment_to_navigation_messages"
+            app:destination="@id/navigation_messages" />
+        <action
+            android:id="@+id/action_messageFragment_to_navigation_contacts"
+            app:destination="@id/navigation_contacts" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_ind_contact"
+        android:name="com.example.finalproject.ui.contact.ContactFragment"
+        android:label="ContactFragment"
+        tools:layout="@layout/fragment_ind_contact">
+        <action
+            android:id="@+id/action_navigation_ind_contact_to_navigation_contacts"
+            app:destination="@id/navigation_contacts" />
+        <action
+            android:id="@+id/action_navigation_ind_contact_to_navigation_messages"
+            app:destination="@id/navigation_messages" />
+        <action
+            android:id="@+id/action_navigation_ind_contact_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
     </fragment>
 </navigation>
