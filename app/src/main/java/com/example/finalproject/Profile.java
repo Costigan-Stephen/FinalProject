@@ -1,5 +1,6 @@
 package com.example.finalproject;
 
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Profile extends Fragment {
+public class Profile extends FragmentActivity {
 
     private ProfileViewModel mViewModel;
 
@@ -32,17 +33,5 @@ public class Profile extends Fragment {
 //        mViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
 //        // TODO: Use the ViewModel
 //    }
-
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
-
-        return view;
-    }
 
 }

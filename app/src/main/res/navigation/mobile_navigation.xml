@@ -3,48 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_contacts">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_contacts"
         android:name="com.example.finalproject.ui.contacts.ContactsFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_contacts" >
         <action
-            android:id="@+id/action_navigation_home_to_navigation_dashboard"
-            app:destination="@id/navigation_dashboard" />
+            android:id="@+id/action_navigation_contacts_to_navigation_messages"
+            app:destination="@id/navigation_messages" />
         <action
-            android:id="@+id/action_navigation_home_to_navigation_notifications"
-            app:destination="@id/navigation_notifications" />
+            android:id="@+id/action_navigation_contacts_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_messages"
         android:name="com.example.finalproject.ui.messagelist.MessageListFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_messagelist" >
         <action
-            android:id="@+id/action_navigation_dashboard_to_navigation_notifications"
-            app:destination="@id/navigation_notifications" />
+            android:id="@+id/action_navigation_messages_to_navigation_contacts"
+            app:destination="@id/navigation_contacts" />
         <action
-            android:id="@+id/action_navigation_dashboard_to_navigation_home"
-            app:destination="@id/navigation_home" />
+            android:id="@+id/action_navigation_messages_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_settings"
         android:name="com.example.finalproject.ui.settings.SettingsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_settings" >
         <action
-            android:id="@+id/action_navigation_notifications_to_navigation_home"
-            app:destination="@id/navigation_home" />
+            android:id="@+id/action_navigation_settings_to_navigation_contacts"
+            app:destination="@id/navigation_contacts" />
         <action
-            android:id="@+id/action_navigation_notifications_to_navigation_dashboard"
-            app:destination="@id/navigation_dashboard" />
+            android:id="@+id/action_navigation_settings_to_navigation_messages"
+            app:destination="@id/navigation_messages" />
     </fragment>
 
     <action
         android:id="@+id/action_global_nav_home"
-        app:destination="@id/nav_home" />
+        app:destination="@id/navigation_contacts" />
 </navigation>

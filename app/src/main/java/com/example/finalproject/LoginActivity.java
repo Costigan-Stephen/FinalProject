@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void SignInClick(View view){
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, MainView.class));
     }
 
     public void registerClick(View view){
