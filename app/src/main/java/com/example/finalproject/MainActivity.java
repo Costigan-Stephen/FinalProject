@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void backMessageList(View view){ navController.navigate(R.id.navigation_messages); }
 
+    public void backContactList(View view){ navController.navigate(R.id.navigation_contacts); }
+
     public void clickMessage(View view){
         navController.navigate(R.id.navigation_ind_message);
     }

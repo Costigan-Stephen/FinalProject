@@ -28,7 +28,7 @@
 
         android:backgroundTint="@color/background_blue"
         android:contentDescription="@string/todo"
-        android:onClick="backMessageList"
+        android:onClick="backContactList"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
