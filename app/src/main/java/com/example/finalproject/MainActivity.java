@@ -48,35 +48,6 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-//        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(MenuItem item) {
-//                Fragment fragment = null;
-//                switch (item.getItemId()) {
-//                    case R.id.navigation_contacts:
-//                        Log.i("NAV", "Contacts");
-////                        navController.navigate(R.id.navigation_contacts);
-//                        fragment = new Contacts();
-//                        break;
-//                    case R.id.navigation_messages:
-//                        Log.i("NAV", "Messages");
-//                        fragment = new MessageList();
-////                        navController.navigate(R.id.navigation_messages);
-//                        break;
-//                    case R.id.navigation_settings:
-//                        Log.i("NAV", "Settings");
-//                        fragment = new Settings();
-////                        navController.navigate(R.id.navigation_settings);
-//                        break;
-//                }
-//                FragmentManager manager = getSupportFragmentManager();
-//                FragmentTransaction transaction = manager.beginTransaction();
-//                transaction.replace(R.id.nav_host_fragment_activity_main, fragment);
-//                transaction.commit();
-//                return false;
-//            }
-//        });
-
     }
 
 
