@@ -5,6 +5,10 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_contacts">
 
+    <action
+        android:id="@+id/action_global_nav_home"
+        app:destination="@id/navigation_contacts" />
+
     <fragment
         android:id="@+id/navigation_contacts"
         android:name="com.example.finalproject.ui.contacts.ContactsFragment"
@@ -42,9 +46,24 @@
         <action
             android:id="@+id/action_navigation_settings_to_navigation_messages"
             app:destination="@id/navigation_messages" />
+        <action
+            android:id="@+id/action_navigation_settings_to_profileFragment"
+            app:destination="@id/navigation_profile" />
     </fragment>
 
-    <action
-        android:id="@+id/action_global_nav_home"
-        app:destination="@id/navigation_contacts" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.finalproject.ui.profile.ProfileFragment"
+        android:label="@string/Profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_contacts"
+            app:destination="@id/navigation_contacts" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_messages"
+            app:destination="@id/navigation_messages" />
+    </fragment>
 </navigation>

@@ -88,8 +88,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/btn_bg"
-        android:text="Login"
         android:onClick="SignInClick"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="@+id/inputPassword"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/inputPassword"
@@ -120,10 +120,10 @@
             android:id="@+id/textViewSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
             android:onClick="registerClick"
+            android:text="Sign Up"
             android:textColor="@color/colorRed"
-            tools:layout_editor_absoluteX="251dp"
+            tools:layout_editor_absoluteX="253dp"
             tools:layout_editor_absoluteY="512dp" />
     </LinearLayout>
 

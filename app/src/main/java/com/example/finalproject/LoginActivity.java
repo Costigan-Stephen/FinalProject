@@ -17,6 +17,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void SignInClick(View view){
+        // Check login info
         startActivity(new Intent(this, MainActivity.class));
     }
 

@@ -47,6 +47,12 @@
             tools:ignore="Instantiatable">
         </activity>
         <activity
+            android:name=".Profile"
+            android:exported="true"
+            android:parentActivityName=".MainActivity"
+            tools:ignore="Instantiatable">
+        </activity>
+        <activity
             android:name=".MainView"
             android:exported="true"
             android:parentActivityName=".MainActivity">

@@ -1,59 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".Profile">
+    tools:context=".ui.profile.ProfileFragment">
 
-    <FrameLayout
-        android:id="@+id/fl_wrapper"
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="75dp"
+        android:background="@color/background_blue"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="88dp"
+        tools:layout_conversion_absoluteWidth="417dp" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@color/received_message"
-            android:contentDescription="@string/todo"
-            android:translationY="75dp"
-            app:srcCompat="@drawable/stockimage"
-            tools:ignore="ImageContrastCheck" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/profile"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck"
+        tools:layout_conversion_absoluteHeight="45dp"
+        tools:layout_conversion_absoluteWidth="202dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="@string/name"
-            android:textColor="@color/background_blue"
-            android:textSize="20sp"
-            android:translationY="275dp" />
+    <ImageButton
+        android:id="@+id/add_message"
+        android:layout_width="62dp"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/background_blue"
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="@string/contact_email"
-            android:textColor="@color/background_blue"
-            android:textSize="20sp"
-            android:translationY="300dp" />
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/edit_foreground"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+        tools:layout_conversion_absoluteHeight="70dp"
+        tools:layout_conversion_absoluteWidth="70dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="@string/phone_number"
-            android:textColor="@color/background_blue"
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="224dp"
+        android:background="@color/received_message"
+        android:contentDescription="@string/todo"
+        android:translationY="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/stockimage"
+        tools:ignore="ImageContrastCheck"
+        tools:layout_editor_absoluteX="-16dp" />
 
-            android:textSize="20sp"
-            android:translationY="325dp"
-            tools:ignore="TextContrastCheck" />
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="23dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="@string/name"
+        android:textColor="@color/background_blue"
+        android:textSize="20sp"
+        android:translationY="275dp"
+        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        tools:layout_editor_absoluteX="-16dp" />
 
-    </FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="24dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="@string/phone_number"
+
+        android:textColor="@color/background_blue"
+        android:textSize="20sp"
+        android:translationY="326dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck"
+        tools:layout_editor_absoluteX="-27dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="24dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="@string/contact_email"
+        android:textColor="@color/background_blue"
+        android:textSize="20sp"
+        android:translationY="300dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-16dp" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

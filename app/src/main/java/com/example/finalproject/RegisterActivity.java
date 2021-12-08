@@ -20,7 +20,9 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(new Intent(this, LoginActivity.class));
     }
 
-    public void SignInClick(View view){
+    public void RegisterClick(View view)
+    {
+        // Store user info
         startActivity(new Intent(this, MainActivity.class));
     }
 }
