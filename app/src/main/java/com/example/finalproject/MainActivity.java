@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     public BottomNavigationView navView;
     public NavController navController;
+    public boolean editMode;
+    public boolean profile;
+    int previous;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,14 +70,36 @@ public class MainActivity extends AppCompatActivity {
 
     public void backContactList(View view){ navController.navigate(R.id.navigation_contacts); }
 
+    public void backContactInd(View view){ navController.navigate(previous); }
+
     public void clickMessage(View view){
         navController.navigate(R.id.navigation_ind_message);
     }
 
+    // click contact from list
     public void clickContact(View view){ navController.navigate(R.id.navigation_ind_contact); }
 
-    public void clickEditContact(View view){ navController.navigate(R.id.navigation_edit_contact); }
+    public void clickEditContact(View view){
+        previous = R.id.navigation_ind_contact;
+        editMode = true;
+        profile = false;
+        navController.navigate(R.id.navigation_edit_contact);
+    }
 
-    public void clickSaveContact(View view){ navController.navigate(R.id.navigation_ind_contact); }
+    public void clickEditProfile(View view){
+        previous = R.id.navigation_profile;
+        editMode = true;
+        profile = true;
+        navController.navigate(R.id.navigation_edit_contact);
+    }
+
+    public void clickSaveContact(View view){ navController.navigate(previous); }
+
+    public void clickAddContact(View view){
+        previous = R.id.navigation_ind_contact;
+        editMode = false;
+        profile = false;
+        navController.navigate(R.id.navigation_edit_contact);
+    }
 
 }

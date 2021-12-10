@@ -52,7 +52,7 @@
 
         android:backgroundTint="@color/background_blue"
         android:contentDescription="@string/todo"
-        android:onClick="backContactList"
+        android:onClick="backContactInd"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,11 +63,11 @@
         tools:layout_conversion_absoluteWidth="70dp" />
 
     <TextView
-        android:id="@+id/contactName"
+        android:id="@+id/edit_contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="ContactName"
+        android:text="@string/edit_contact"
         android:textAlignment="textEnd"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -149,7 +149,7 @@
         android:layout_height="55dp"
         android:layout_marginBottom="196dp"
         android:onClick="clickSaveContact"
-        android:text="Save"
+        android:text="@string/update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

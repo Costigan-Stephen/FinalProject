@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.message.ContactFragment">
+    tools:context=".ui.message.MessageFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,8 +12,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="732dp"
+            android:layout_width="413dp"
+            android:layout_height="658dp"
             android:padding="20dp"
             android:scrollbars="vertical"
             app:layoutManager="LinearLayoutManager"
