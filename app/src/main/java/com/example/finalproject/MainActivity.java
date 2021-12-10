@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean editMode;
     public boolean profile;
     int previous;
+    int next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickEditContact(View view){
         previous = R.id.navigation_ind_contact;
+        next = previous;
         editMode = true;
         profile = false;
         navController.navigate(R.id.navigation_edit_contact);
@@ -93,15 +95,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickEditProfile(View view){
         previous = R.id.navigation_profile;
+        next = previous;
         editMode = true;
         profile = true;
         navController.navigate(R.id.navigation_edit_contact);
     }
 
-    public void clickSaveContact(View view){ navController.navigate(previous); }
+    public void clickSaveContact(View view){ navController.navigate(next); }
 
     public void clickAddContact(View view){
         previous = R.id.navigation_contacts;
+        next = R.id.navigation_ind_contact;
         editMode = false;
         profile = false;
         navController.navigate(R.id.navigation_edit_contact);
