@@ -22,8 +22,11 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.finalproject.databinding.ActivityMainBinding;
 
+import java.util.LinkedList;
+
 public class MainActivity extends AppCompatActivity {
 
+    private final LinkedList<String> mWordList = new LinkedList<>();
     private ActivityMainBinding binding;
     public BottomNavigationView navView;
     public NavController navController;
@@ -36,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
 
-
+        for (int i = 0; i < 20; i++) {
+            mWordList.addLast("Word " + i);
+        }
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -96,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     public void clickSaveContact(View view){ navController.navigate(previous); }
 
     public void clickAddContact(View view){
-        previous = R.id.navigation_ind_contact;
+        previous = R.id.navigation_contacts;
         editMode = false;
         profile = false;
         navController.navigate(R.id.navigation_edit_contact);

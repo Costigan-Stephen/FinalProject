@@ -15,13 +15,13 @@ public class Messages {
     }
 
 
-    private static int lastContactId = 0;
+    private static int lastMessageId = 0;
 
     public static ArrayList<Messages> createMessageList(int numMessages) {
         ArrayList<Messages> contacts = new ArrayList<Messages>();
 
         for (int i = 1; i <= numMessages; i++) {
-            contacts.add(new Messages("Person " + ++lastContactId, i <= numMessages / 2));
+            contacts.add(new Messages("Person " + ++lastMessageId, i <= numMessages / 2));
         }
 
         return contacts;
