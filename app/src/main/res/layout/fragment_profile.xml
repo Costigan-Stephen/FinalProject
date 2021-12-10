@@ -43,6 +43,7 @@
         android:backgroundTint="@color/background_blue"
 
         android:contentDescription="@string/todo"
+        android:onClick="clickEditContact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.925"

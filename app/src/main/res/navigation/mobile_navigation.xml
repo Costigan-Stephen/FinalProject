@@ -71,6 +71,9 @@
         <action
             android:id="@+id/action_navigation_profile_to_navigation_messages"
             app:destination="@id/navigation_messages" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_edit_contact"
+            app:destination="@id/navigation_edit_contact" />
     </fragment>
     <fragment
         android:id="@+id/navigation_ind_message"
@@ -101,5 +104,26 @@
         <action
             android:id="@+id/action_navigation_ind_contact_to_navigation_settings"
             app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_ind_contact_to_navigation_edit_contact"
+            app:destination="@id/navigation_edit_contact" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_edit_contact"
+        android:name="com.example.finalproject.ui.contactedit.ContactEditFragment"
+        android:label="ContactEditFragment"
+        tools:layout="@layout/fragment_edit_contact">
+        <action
+            android:id="@+id/action_navigation_edit_contact_to_navigation_contacts"
+            app:destination="@id/navigation_contacts" />
+        <action
+            android:id="@+id/action_navigation_edit_contact_to_navigation_ind_contact"
+            app:destination="@id/navigation_ind_contact" />
+        <action
+            android:id="@+id/action_navigation_edit_contact_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+        <action
+            android:id="@+id/action_navigation_edit_contact_to_navigation_messages"
+            app:destination="@id/navigation_messages" />
     </fragment>
 </navigation>

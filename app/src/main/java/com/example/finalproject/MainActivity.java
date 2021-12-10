@@ -40,7 +40,13 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_contacts, R.id.navigation_messages, R.id.navigation_settings, R.id.navigation_profile, R.id.navigation_ind_message, R.id.navigation_ind_contact)
+                R.id.navigation_contacts,
+                R.id.navigation_messages,
+                R.id.navigation_settings,
+                R.id.navigation_profile,
+                R.id.navigation_ind_message,
+                R.id.navigation_ind_contact,
+                R.id.navigation_edit_contact)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -65,5 +71,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickContact(View view){ navController.navigate(R.id.navigation_ind_contact); }
+
+    public void clickEditContact(View view){ navController.navigate(R.id.navigation_edit_contact); }
+
+    public void clickSaveContact(View view){ navController.navigate(R.id.navigation_ind_contact); }
 
 }

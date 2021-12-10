@@ -1,4 +1,4 @@
-package com.example.finalproject.ui.contact;
+package com.example.finalproject.ui.contactedit;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,19 +9,19 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.finalproject.databinding.FragmentIndContactBinding;
-import com.example.finalproject.ui.contact.ContactViewModel;
+import com.example.finalproject.databinding.FragmentEditContactBinding;
+import com.example.finalproject.ui.contactedit.ContactEditViewModel;
 
-public class ContactFragment extends Fragment {
+public class ContactEditFragment extends Fragment {
 
-    private ContactViewModel contactViewModel;
-    private FragmentIndContactBinding binding;
+    private ContactEditViewModel contactEditViewModel;
+    private FragmentEditContactBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        contactViewModel = new ViewModelProvider(this).get(ContactViewModel.class);
+        contactEditViewModel = new ViewModelProvider(this).get(ContactEditViewModel.class);
 
-        binding = FragmentIndContactBinding.inflate(inflater, container, false);
+        binding = FragmentEditContactBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         return root;
