@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -22,6 +23,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.finalproject.databinding.ActivityMainBinding;
 
+import java.io.IOException;
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
@@ -101,7 +103,23 @@ public class MainActivity extends AppCompatActivity {
         navController.navigate(R.id.navigation_edit_contact);
     }
 
-    public void clickSaveContact(View view){ navController.navigate(next); }
+    public void clickSaveContact(View view){
+            if (((TextView) findViewById(R.id.text_name)).length() > 0 && ((TextView) findViewById(R.id.text_phone)).length() > 0 && ((TextView) findViewById(R.id.text_email)).length() > 0) { // Save Values
+
+                String name = ((TextView) findViewById(R.id.text_name)).length() > 0 ? ((TextView) findViewById(R.id.text_name)).getText().toString() : "";
+                int phone = Integer.parseInt(((TextView) findViewById(R.id.text_phone)).length() > 0 ? ((TextView) findViewById(R.id.text_phone)).getText().toString() : "");
+                String email = ((TextView) findViewById(R.id.text_email)).length() > 0 ? ((TextView) findViewById(R.id.text_email)).getText().toString() : "";
+
+                Toast toast = Toast.makeText(this, getSaveText(), Toast.LENGTH_SHORT);
+                toast.show();
+                navController.navigate(next);
+            } else {
+                Toast toast = Toast.makeText(this, "Error: Please enter all required fields!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+
+
+    }
 
     public void clickAddContact(View view){
         previous = R.id.navigation_contacts;
@@ -110,5 +128,10 @@ public class MainActivity extends AppCompatActivity {
         profile = false;
         navController.navigate(R.id.navigation_edit_contact);
     }
+
+    public String getSaveText(){
+        return editMode ? ( profile ? "Profile updated successfully!" : "Contact updated successfully!") : "Contact created successfully!";
+    }
+
 
 }
