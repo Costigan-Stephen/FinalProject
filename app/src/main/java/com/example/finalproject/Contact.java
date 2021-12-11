@@ -17,11 +17,10 @@ public class Contact {
         this.phone = phone;
     }
 
-    public Contact(String name, long phone, String email, String password){
+    public Contact(String name, String email, String password){
         this.id = System.currentTimeMillis();
         this.name = name;
         this.email = email;
-        this.phone = phone;
         this.password = password;
     }
 

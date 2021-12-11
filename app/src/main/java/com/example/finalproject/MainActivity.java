@@ -170,4 +170,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void registerClient(Contact contact) {
+        usersRef = database.getReference("Contacts");
+        contacts.add(contact);
+        addContactToFirebase();
+    }
 }
