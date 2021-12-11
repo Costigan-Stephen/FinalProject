@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         usersRef = database.getReference("Contacts");
         messageRef = database.getReference("Message");
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+
         setContentView(binding.getRoot());
         navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -61,11 +62,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
 
-
+        // MUST BE LAST IN ONCREATE
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-
     }
 
     public void clickProfile(View view){
@@ -107,18 +107,17 @@ public class MainActivity extends AppCompatActivity {
     public void clickSaveContact(View view){
             if (((TextView) findViewById(R.id.text_name)).length() > 0 &&
                     ((TextView) findViewById(R.id.text_phone)).length() > 0 &&
-                    ((TextView) findViewById(R.id.text_email)).length() > 0) { // Save Values
-                String name = ((TextView) findViewById(R.id.text_name)).length() > 0 ? ((TextView) findViewById(R.id.text_name)).getText().toString() : "";
-                int phone = Integer.parseInt(((TextView) findViewById(R.id.text_phone)).length() > 0 ? ((TextView) findViewById(R.id.text_phone)).getText().toString() : "");
-                String email = ((TextView) findViewById(R.id.text_email)).length() > 0 ? ((TextView) findViewById(R.id.text_email)).getText().toString() : "";
+                    ((TextView) findViewById(R.id.text_email)).length() > 0) {
+                // Save Values
+                String name = ((TextView) findViewById(R.id.text_name)).getText().toString();
+                long phone = Integer.parseInt(((TextView) findViewById(R.id.text_phone)).getText().toString());
+                String email = ((TextView) findViewById(R.id.text_email)).getText().toString();
 
                 Contact contact = new Contact(name, phone, email);
                 contacts.add(contact);
-                currentContact = contact.id;
 
-//                DatabaseReference ref = database.getReference("https://samchatapp-1b61e-default-rtdb.firebaseio.com/");
-//                usersRef = ref.child("contact");
-//                usersRef.setValue(contacts);
+                if(!editMode)
+                    currentContact = contact.id;
 
                 addContactToFirebase();
 
@@ -129,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast toast = Toast.makeText(this, "Error: Please enter all required fields!", Toast.LENGTH_SHORT);
                 toast.show();
             }
-
-
     }
 
     public void clickAddContact(View view){
