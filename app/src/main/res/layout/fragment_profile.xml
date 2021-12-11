@@ -41,7 +41,8 @@
         android:layout_width="62dp"
         android:layout_height="56dp"
         android:backgroundTint="@color/background_blue"
-
+        android:background="@drawable/round_outline"
+        android:outlineProvider="background"
         android:contentDescription="@string/todo"
         android:onClick="clickEditProfile"
         app:layout_constraintBottom_toBottomOf="parent"
