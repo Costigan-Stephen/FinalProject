@@ -1,34 +1,33 @@
 package com.example.finalproject;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.finalproject.databinding.ActivityMainBinding;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-import java.io.IOException;
+
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final LinkedList<String> mWordList = new LinkedList<>();
+    private final LinkedList<Contact> contacts = new LinkedList<>();
+    private final LinkedList<Messages> messages = new LinkedList<>();
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference usersRef;
+    DatabaseReference messageRef;
     private ActivityMainBinding binding;
     public BottomNavigationView navView;
     public NavController navController;
@@ -36,16 +35,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean profile;
     int previous;
     int next;
+    long currentContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-
-        for (int i = 0; i < 20; i++) {
-            mWordList.addLast("Word " + i);
-        }
-
+        usersRef = database.getReference("Contacts");
+        messageRef = database.getReference("Message");
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         navView = findViewById(R.id.nav_view);
@@ -63,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
@@ -85,7 +83,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // click contact from list
-    public void clickContact(View view){ navController.navigate(R.id.navigation_ind_contact); }
+    public void clickContact(View view){
+        //currentContact
+        navController.navigate(R.id.navigation_ind_contact);
+    }
 
     public void clickEditContact(View view){
         previous = R.id.navigation_ind_contact;
@@ -104,12 +105,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickSaveContact(View view){
-            if (((TextView) findViewById(R.id.text_name)).length() > 0 && ((TextView) findViewById(R.id.text_phone)).length() > 0 && ((TextView) findViewById(R.id.text_email)).length() > 0) { // Save Values
+            if (((TextView) findViewById(R.id.text_name)).length() > 0 &&
+                    ((TextView) findViewById(R.id.text_phone)).length() > 0 &&
+                    ((TextView) findViewById(R.id.text_email)).length() > 0) { // Save Values
                 String name = ((TextView) findViewById(R.id.text_name)).length() > 0 ? ((TextView) findViewById(R.id.text_name)).getText().toString() : "";
                 int phone = Integer.parseInt(((TextView) findViewById(R.id.text_phone)).length() > 0 ? ((TextView) findViewById(R.id.text_phone)).getText().toString() : "");
                 String email = ((TextView) findViewById(R.id.text_email)).length() > 0 ? ((TextView) findViewById(R.id.text_email)).getText().toString() : "";
 
                 Contact contact = new Contact(name, phone, email);
+                contacts.add(contact);
+                currentContact = contact.id;
+
+//                DatabaseReference ref = database.getReference("https://samchatapp-1b61e-default-rtdb.firebaseio.com/");
+//                usersRef = ref.child("contact");
+//                usersRef.setValue(contacts);
+
+                addContactToFirebase();
 
                 Toast toast = Toast.makeText(this, getSaveText(), Toast.LENGTH_SHORT);
                 toast.show();
@@ -134,5 +145,32 @@ public class MainActivity extends AppCompatActivity {
         return editMode ? ( profile ? "Profile updated successfully!" : "Contact updated successfully!") : "Contact created successfully!";
     }
 
+    private void addContactToFirebase() {
+
+        usersRef.setValue(contacts, new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                if (databaseError != null) {
+                    System.out.println("Data could not be saved " + databaseError.getMessage());
+                } else {
+                    System.out.println("Data saved successfully.");
+                }
+            }
+        });
+    }
+
+    private void addMessagetoFirebase() {
+
+        messageRef.setValue(messages, new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                if (databaseError != null) {
+                    System.out.println("Data could not be saved " + databaseError.getMessage());
+                } else {
+                    System.out.println("Data saved successfully.");
+                }
+            }
+        });
+    }
 
 }

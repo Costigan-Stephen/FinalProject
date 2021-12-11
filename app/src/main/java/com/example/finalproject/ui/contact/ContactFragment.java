@@ -9,8 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.finalproject.Contact;
 import com.example.finalproject.databinding.FragmentIndContactBinding;
 import com.example.finalproject.ui.contact.ContactViewModel;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class ContactFragment extends Fragment {
 
@@ -19,6 +23,7 @@ public class ContactFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         contactViewModel = new ViewModelProvider(this).get(ContactViewModel.class);
 
         binding = FragmentIndContactBinding.inflate(inflater, container, false);
