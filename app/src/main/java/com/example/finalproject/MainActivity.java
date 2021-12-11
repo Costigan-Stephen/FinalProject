@@ -5,8 +5,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -14,18 +12,24 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.finalproject.databinding.ActivityMainBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.LinkedList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class MainActivity extends AppCompatActivity {
 
     private final LinkedList<Contact> contacts = new LinkedList<>();
     private final LinkedList<Messages> messages = new LinkedList<>();
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final AtomicInteger count = new AtomicInteger();
     DatabaseReference usersRef;
     DatabaseReference messageRef;
     private ActivityMainBinding binding;
@@ -61,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+        messageRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                long numChildren = dataSnapshot.getChildrenCount();
+                System.out.println(count.get() + " == " + numChildren);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        });
 
         // MUST BE LAST IN ONCREATE
         if (getSupportActionBar() != null) {
@@ -143,7 +157,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addContactToFirebase() {
-
+        try {
+            getContacts();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         usersRef.setValue(contacts, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
@@ -154,6 +174,22 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void getContacts() throws IOException {
+      /*  // asynchronously retrieve the document
+                ApiFuture<DocumentSnapshot> future = usersRef.get();
+        // block on response
+                DocumentSnapshot document = future.get();
+                City city = null;
+                if (document.exists()) {
+                    // convert document to POJO
+                    city = document.toObject(City.class);
+                    System.out.println(city);
+                } else {
+                    System.out.println("No such document!");
+                }
+*/
     }
 
     private void addMessagetoFirebase() {
