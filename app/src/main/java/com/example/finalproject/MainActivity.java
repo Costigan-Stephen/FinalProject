@@ -105,10 +105,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickSaveContact(View view){
             if (((TextView) findViewById(R.id.text_name)).length() > 0 && ((TextView) findViewById(R.id.text_phone)).length() > 0 && ((TextView) findViewById(R.id.text_email)).length() > 0) { // Save Values
-
                 String name = ((TextView) findViewById(R.id.text_name)).length() > 0 ? ((TextView) findViewById(R.id.text_name)).getText().toString() : "";
                 int phone = Integer.parseInt(((TextView) findViewById(R.id.text_phone)).length() > 0 ? ((TextView) findViewById(R.id.text_phone)).getText().toString() : "");
                 String email = ((TextView) findViewById(R.id.text_email)).length() > 0 ? ((TextView) findViewById(R.id.text_email)).getText().toString() : "";
+
+                Contact contact = new Contact(name, phone, email);
 
                 Toast toast = Toast.makeText(this, getSaveText(), Toast.LENGTH_SHORT);
                 toast.show();
