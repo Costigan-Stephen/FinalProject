@@ -146,12 +146,13 @@
         android:id="@+id/button2"
         android:layout_width="339dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="196dp"
+        android:layout_marginTop="484dp"
         android:onClick="clickSaveContact"
         android:text="@string/update"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
