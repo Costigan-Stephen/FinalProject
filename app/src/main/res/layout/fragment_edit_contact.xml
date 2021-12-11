@@ -49,10 +49,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-
         android:backgroundTint="@color/background_blue"
         android:contentDescription="@string/todo"
         android:onClick="backContactInd"
+        android:paddingLeft="15dp"
+        android:paddingRight="-10dp"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
