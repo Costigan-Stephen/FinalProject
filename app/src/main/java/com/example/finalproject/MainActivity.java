@@ -21,9 +21,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
-import java.net.HttpURLConnection;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -76,8 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
+            public void onCancelled(DatabaseError databaseError) {}
         });
 
         // MUST BE LAST IN ONCREATE
@@ -86,33 +82,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void clickProfile(View view) {
+    public void clickProfile(View view){
         navController.navigate(R.id.navigation_profile);
     }
 
-    public void backMessageList(View view) {
-        navController.navigate(R.id.navigation_messages);
-    }
+    public void backMessageList(View view){ navController.navigate(R.id.navigation_messages); }
 
-    public void backContactList(View view) {
-        navController.navigate(R.id.navigation_contacts);
-    }
+    public void backContactList(View view){ navController.navigate(R.id.navigation_contacts); }
 
-    public void backContactInd(View view) {
-        navController.navigate(previous);
-    }
+    public void backContactInd(View view){ navController.navigate(previous); }
 
-    public void clickMessage(View view) {
+    public void clickMessage(View view){
         navController.navigate(R.id.navigation_ind_message);
     }
 
     // click contact from list
-    public void clickContact(View view) {
+    public void clickContact(View view){
         //currentContact
         navController.navigate(R.id.navigation_ind_contact);
     }
 
-    public void clickEditContact(View view) {
+    public void clickEditContact(View view){
         previous = R.id.navigation_ind_contact;
         next = previous;
         editMode = true;
@@ -120,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         navController.navigate(R.id.navigation_edit_contact);
     }
 
-    public void clickEditProfile(View view) {
+    public void clickEditProfile(View view){
         previous = R.id.navigation_profile;
         next = previous;
         editMode = true;
@@ -128,33 +118,37 @@ public class MainActivity extends AppCompatActivity {
         navController.navigate(R.id.navigation_edit_contact);
     }
 
-    public void clickSaveContact(View view) {
-        if (((TextView) findViewById(R.id.text_name)).length() > 0 &&
-                ((TextView) findViewById(R.id.text_phone)).length() > 0 &&
-                ((TextView) findViewById(R.id.text_email)).length() > 0) {
-            // Save Values
-            String name = ((TextView) findViewById(R.id.text_name)).getText().toString();
-            long phone = Integer.parseInt(((TextView) findViewById(R.id.text_phone)).getText().toString());
-            String email = ((TextView) findViewById(R.id.text_email)).getText().toString();
+    public void clickSaveContact(View view){
+            if (((TextView) findViewById(R.id.text_name)).length() > 0 &&
+                    ((TextView) findViewById(R.id.text_phone)).length() > 0 &&
+                    ((TextView) findViewById(R.id.text_email)).length() > 0) {
+                // Save Values
+                String name = ((TextView) findViewById(R.id.text_name)).getText().toString();
+                long phone = Integer.parseInt(((TextView) findViewById(R.id.text_phone)).getText().toString());
+                String email = ((TextView) findViewById(R.id.text_email)).getText().toString();
 
-            Contact contact = new Contact(name, phone, email);
-            contacts.add(contact);
+                Contact contact = new Contact(name, phone, email);
+                contacts.add(contact);
 
-            if (!editMode)
-                currentContact = contact.id;
+                if(!editMode)
+                    currentContact = contact.id;
 
-            addContactToFirebase();
+                addContactToFirebase();
 
-            Toast toast = Toast.makeText(this, getSaveText(), Toast.LENGTH_SHORT);
-            toast.show();
-            navController.navigate(next);
-        } else {
-            Toast toast = Toast.makeText(this, "Error: Please enter all required fields!", Toast.LENGTH_SHORT);
-            toast.show();
-        }
+                Toast toast = Toast.makeText(this, getSaveText(), Toast.LENGTH_SHORT);
+                toast.show();
+                navController.navigate(next);
+
+//                ((TextView) findViewById(R.id.textView8)).setText("Name: " + name);
+//                ((TextView) findViewById(R.id.textView10)).setText("Phone: " + String.valueOf(phone));
+//                ((TextView) findViewById(R.id.textView9)).setText("Email: " + email);
+            } else {
+                Toast toast = Toast.makeText(this, "Error: Please enter all required fields!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
     }
 
-    public void clickAddContact(View view) {
+    public void clickAddContact(View view){
         previous = R.id.navigation_contacts;
         next = R.id.navigation_ind_contact;
         editMode = false;
@@ -162,8 +156,8 @@ public class MainActivity extends AppCompatActivity {
         navController.navigate(R.id.navigation_edit_contact);
     }
 
-    public String getSaveText() {
-        return editMode ? (profile ? "Profile updated successfully!" : "Contact updated successfully!") : "Contact created successfully!";
+    public String getSaveText(){
+        return editMode ? ( profile ? "Profile updated successfully!" : "Contact updated successfully!") : "Contact created successfully!";
     }
 
     private void addContactToFirebase() {

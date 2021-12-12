@@ -10,72 +10,74 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-<!--        <View-->
-<!--            android:id="@+id/viewBackground"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:layout_marginBottom="16sp"-->
-<!--            android:background="@drawable/background_content_top"-->
-<!--            app:layout_constraintBottom_toTopOf="@id/layoutSend"-->
-<!--            app:layout_constraintTop_toTopOf="parent"/>-->
+        <!--        <View-->
+        <!--            android:id="@+id/viewBackground"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:layout_marginBottom="16sp"-->
+        <!--            android:background="@drawable/background_content_top"-->
+        <!--            app:layout_constraintBottom_toTopOf="@id/layoutSend"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"/>-->
         <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_weight="20"
             android:layout_height="0dp"
+            android:layout_weight="20"
             app:layout_constraintBottom_toTopOf="@id/layoutSend"
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/scrollView">
-                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                        android:id="@+id/layout2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:id="@+id/layout1">
-                        </LinearLayout>
-                    </RelativeLayout>
-                </ScrollView>
+            app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imageBack"
-                    android:layout_width="30sp"
-                    android:layout_height="30sp"
-                    android:layout_marginStart="16sp"
-                    android:layout_marginLeft="16sp"
-                    android:layout_marginTop="12sp"
-                    android:padding="5sp"
-                    android:src="@drawable/ic_back"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imageInfo"
-                    android:layout_width="30sp"
-                    android:layout_height="30sp"
-                    android:layout_marginTop="12sp"
-                    android:layout_marginEnd="16sp"
-                    android:padding="4sp"
-                    android:src="@drawable/ic_info"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-                <TextView
-                    android:id="@+id/textName"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/layout1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8sp"
-                    android:layout_marginEnd="8sp"
-                    android:ellipsize="end"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@id/imageBack"
-                    app:layout_constraintEnd_toStartOf="@id/imageInfo"
-                    app:layout_constraintStart_toEndOf="@id/imageBack"
-                    app:layout_constraintTop_toTopOf="@id/imageBack" />
+                    android:orientation="vertical"></LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageBack"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginStart="16sp"
+            android:layout_marginLeft="16sp"
+            android:layout_marginTop="12sp"
+            android:padding="5sp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageInfo"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginTop="12sp"
+            android:layout_marginEnd="16sp"
+            android:padding="4sp"
+            android:src="@drawable/ic_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8sp"
+            android:layout_marginEnd="8sp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/imageBack"
+            app:layout_constraintEnd_toStartOf="@id/imageInfo"
+            app:layout_constraintStart_toEndOf="@id/imageBack"
+            app:layout_constraintTop_toTopOf="@id/imageBack" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/chatRecyclerView"
@@ -89,29 +91,29 @@
             app:layout_constraintTop_toBottomOf="@id/toolbar"
             tools:layout_editor_absoluteX="2dp" />
 
-                <FrameLayout
-                    android:id="@+id/layoutSend"
-                    android:layout_width="40sp"
-                    android:layout_height="40sp"
-                    android:layout_marginEnd="16sp"
-                    android:layout_marginRight="16sp"
-                    android:layout_marginBottom="12sp"
-                    android:background="@drawable/background_chat_input"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+        <FrameLayout
+            android:id="@+id/layoutSend"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_marginEnd="16sp"
+            android:layout_marginRight="16sp"
+            android:layout_marginBottom="12sp"
+            android:background="@drawable/background_chat_input"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/sendButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="4sp"
-                        android:layout_marginLeft="4sp"
-                        android:onClick="sendMessage"
-                        android:padding="8sp"
-                        android:src="@drawable/ic_send"
-                        app:tint="@color/black" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/sendButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4sp"
+                android:layout_marginLeft="4sp"
+                android:onClick="sendMessage"
+                android:padding="8sp"
+                android:src="@drawable/ic_send"
+                app:tint="@color/black" />
 
-                </FrameLayout>
+        </FrameLayout>
 
         <EditText
             android:id="@+id/inputMessage"
@@ -148,43 +150,43 @@
             tools:layout_conversion_absoluteHeight="88dp"
             tools:layout_conversion_absoluteWidth="417dp" />
 
-                <ImageButton
-                    android:id="@+id/add_message"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:backgroundTint="@color/background_blue"
-                    android:contentDescription="@string/todo"
-                    android:onClick="backMessageList"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="-10dp"
-                    app:layout_constraintEnd_toEndOf="@+id/toolbar"
-                    app:layout_constraintHorizontal_bias="0.083"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/back_button"
-                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
-                    tools:layout_conversion_absoluteHeight="70dp"
-                    tools:layout_conversion_absoluteWidth="70dp" />
+        <ImageButton
+            android:id="@+id/add_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/background_blue"
+            android:contentDescription="@string/todo"
+            android:onClick="backMessageList"
+            android:paddingLeft="15dp"
+            android:paddingRight="-10dp"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintHorizontal_bias="0.083"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back_button"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+            tools:layout_conversion_absoluteHeight="70dp"
+            tools:layout_conversion_absoluteWidth="70dp" />
 
-                <TextView
-                    android:id="@+id/contactName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="ContactName"
-                    android:textAlignment="textEnd"
-                    android:textColor="#FFFFFF"
-                    android:textSize="30sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="TextContrastCheck"
-                    tools:layout_conversion_absoluteHeight="45dp"
-                    tools:layout_conversion_absoluteWidth="202dp" />
+        <TextView
+            android:id="@+id/contactName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="ContactName"
+            android:textAlignment="textEnd"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck"
+            tools:layout_conversion_absoluteHeight="45dp"
+            tools:layout_conversion_absoluteWidth="202dp" />
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
         </RelativeLayout>
 

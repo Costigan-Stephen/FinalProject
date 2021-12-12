@@ -16,6 +16,7 @@
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37447916666666664" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.37447916666666664" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/drawable/message_button.xml" value="0.37447916666666664" />
+        <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/drawable/round_outline.xml" value="0.21666666666666667" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/drawable/settings_button.xml" value="0.37447916666666664" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/drawable/tab_color.xml" value="0.17072072072072073" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/drawable/user_button.xml" value="0.27927927927927926" />
@@ -25,7 +26,10 @@
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/activity_signin.xml" value="0.2726449275362319" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/fragment_contacts.xml" value="0.2726449275362319" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/fragment_dashboard.xml" value="0.2884963768115942" />
+        <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/fragment_edit_contact.xml" value="0.17603850050658562" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/fragment_home.xml" value="0.2884963768115942" />
+        <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/fragment_ind_contact.xml" value="0.17603850050658562" />
+        <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/fragment_ind_message.xml" value="0.17603850050658562" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/fragment_messagelist.xml" value="0.22" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/fragment_messagelist2.xml" value="0.2" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/fragment_messagelist_list.xml" value="0.1859375" />
@@ -33,13 +37,11 @@
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/fragment_profile.xml" value="0.18125" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/fragment_settings.xml" value="0.24114583333333334" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/item_messagelist.xml" value="0.2726449275362319" />
+        <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/layout/received_message.xml" value="0.67" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.35833333333333334" />
         <entry key="..\:/SoftwareTeam/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/SoftwareTeam/FinalProject/app/src/main/res/layout/activity_signin.xml" value="0.25" />
         <entry key="..\:/Users/Vizar/Documents/SoftwareDesignandDevelopmentCS246-Fall2021/FinalProject/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Users/blain/AndroidStudioProjects/FinalProject/app/src/main/res/layout/fragment_messagelist.xml" value="0.34375" />
-        <entry key="..\:/Users/blain/AndroidStudioProjects/FinalProject/app/src/main/res/layout/fragment_messagelist2.xml" value="0.34375" />
-        <entry key="..\:/Users/blain/AndroidStudioProjects/FinalProject/app/src/main/res/layout/fragment_messagelist_list.xml" value="0.34375" />
       </map>
     </option>
   </component>

@@ -2,20 +2,6 @@ package com.example.finalproject;
 
 //This is where all our chats will be seen
 
-import static com.firebase.client.Firebase.setAndroidContext;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.google.firebase.database.DataSnapshot;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
-
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -27,8 +13,9 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import java.util.HashMap;
-import java.util.Map;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.ktx.Firebase;
 
 
 public class Chat extends AppCompatActivity {
@@ -51,7 +38,7 @@ public class Chat extends AppCompatActivity {
         messageArea = findViewById(R.id.inputMessage);
         scrollView = findViewById(R.id.scrollView);
 
-        setAndroidContext(this);
+        /*setAndroidContext(this);
         reference1 = new Firebase("https://samchatapp-1b61e.firebaseapp.com/messages/" + Contact.name + "_" + Contact.email);
         reference2 = new Firebase("https://samchatapp-1b61e.firebaseapp.com/messages/" + Contact.email + "_" + Contact.name);
 
@@ -86,31 +73,7 @@ public class Chat extends AppCompatActivity {
                 }
             }
 
-            @Override
-            public void onChildAdded(com.firebase.client.DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildChanged(com.firebase.client.DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(com.firebase.client.DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(com.firebase.client.DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
+        });*/
     }
 
     public void addMessageBox(String message, int type){
