@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.EditText;
+
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -109,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 int phone = Integer.parseInt(((TextView) findViewById(R.id.text_phone)).length() > 0 ? ((TextView) findViewById(R.id.text_phone)).getText().toString() : "");
                 String email = ((TextView) findViewById(R.id.text_email)).length() > 0 ? ((TextView) findViewById(R.id.text_email)).getText().toString() : "";
 
-                Contact contact = new Contact(name, phone, email);
+                Contact contact = new Contact();
 
                 Toast toast = Toast.makeText(this, getSaveText(), Toast.LENGTH_SHORT);
                 toast.show();

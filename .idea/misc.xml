@@ -46,6 +46,12 @@
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.35833333333333334" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/mipmap-anydpi-v26/edit.xml" value="0.2015625" />
         <entry key="..\:/OneDrive - BYU-Idaho/BYUI/CS 246 Software Design and Development/FinalProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2015625" />
+        <entry key="app/src/main/res/drawable-xxhdpi/background_chat_input.xml" value="0.1484375" />
+        <entry key="app/src/main/res/drawable-xxhdpi/ic_back.xml" value="0.1484375" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.13645833333333332" />
+        <entry key="app/src/main/res/layout/fragment_ind_message.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/received_message.xml" value="0.165" />
       </map>
     </option>
   </component>

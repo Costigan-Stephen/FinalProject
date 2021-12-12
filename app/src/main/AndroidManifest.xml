@@ -10,11 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
-
         <activity
-            android:theme="@style/Theme.FinalProject.NoActionBar"
+            android:name=".Chat"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.FinalProject.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,14 +46,12 @@
             android:name=".Contacts"
             android:exported="true"
             android:parentActivityName=".MainActivity"
-            tools:ignore="Instantiatable">
-        </activity>
+            tools:ignore="Instantiatable"></activity>
         <activity
             android:name=".Profile"
             android:exported="true"
             android:parentActivityName=".MainActivity"
-            tools:ignore="Instantiatable">
-        </activity>
+            tools:ignore="Instantiatable"></activity>
         <activity
             android:name=".MainView"
             android:exported="true"
@@ -66,8 +66,7 @@
             android:name=".MessageList"
             android:exported="true"
             android:parentActivityName=".MainActivity"
-            tools:ignore="Instantiatable">
-        </activity>
+            tools:ignore="Instantiatable"></activity>
         <activity
             android:name=".Settings"
             android:label="@string/title_activity_settings"
@@ -75,7 +74,7 @@
             tools:ignore="Instantiatable">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
     </application>
 
