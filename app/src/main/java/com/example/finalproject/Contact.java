@@ -24,4 +24,8 @@ public class Contact {
         this.password = password;
     }
 
+    public Contact(){
+
+    }
+
 }
