@@ -19,6 +19,7 @@ public class MainView extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
+    // No longer in use
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

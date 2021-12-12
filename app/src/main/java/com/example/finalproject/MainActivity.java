@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+        // Firebase sync
         messageRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -82,26 +83,33 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // User clicks on profile button inside of Settings
     public void clickProfile(View view){
         navController.navigate(R.id.navigation_profile);
     }
 
+    // User clicks on message list on nav bar
     public void backMessageList(View view){ navController.navigate(R.id.navigation_messages); }
 
+    // User clicks back button while in contact view
     public void backContactList(View view){ navController.navigate(R.id.navigation_contacts); }
 
+    // User clicks back button while in the individual contact. Previous is used to determine whether
+    // user's previous layout was the profile, new user, or editing an existing user.
     public void backContactInd(View view){ navController.navigate(previous); }
 
+    // Send new message, reached from messagelist view
     public void clickMessage(View view){
         navController.navigate(R.id.navigation_ind_message);
     }
 
-    // click contact from list
+    // click contact from contact list. Not implemented yet as there is no list of contacts
     public void clickContact(View view){
-        //currentContact
+        //currentContact value would be set here
         navController.navigate(R.id.navigation_ind_contact);
     }
 
+    // From within contact ind view, clicking on edit will return the edit layout
     public void clickEditContact(View view){
         previous = R.id.navigation_ind_contact;
         next = previous;
@@ -110,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         navController.navigate(R.id.navigation_edit_contact);
     }
 
+    // User clicks to edit their profile, which goes to the edit contact layout
     public void clickEditProfile(View view){
         previous = R.id.navigation_profile;
         next = previous;
@@ -118,36 +127,45 @@ public class MainActivity extends AppCompatActivity {
         navController.navigate(R.id.navigation_edit_contact);
     }
 
+    // gather information from edit layout to determine whether required fields are filled in. Save contact to firebase
     public void clickSaveContact(View view){
+            // do fields have values in them? If not, go no further.
             if (((TextView) findViewById(R.id.text_name)).length() > 0 &&
                     ((TextView) findViewById(R.id.text_phone)).length() > 0 &&
                     ((TextView) findViewById(R.id.text_email)).length() > 0) {
-                // Save Values
+                // Save Values to variables
                 String name = ((TextView) findViewById(R.id.text_name)).getText().toString();
                 long phone = Integer.parseInt(((TextView) findViewById(R.id.text_phone)).getText().toString());
                 String email = ((TextView) findViewById(R.id.text_email)).getText().toString();
 
+                // post variables to a contact constructor
                 Contact contact = new Contact(name, phone, email);
+                // add contact to list of existing contacts (intended to have been pulled)
                 contacts.add(contact);
 
                 if(!editMode)
                     currentContact = contact.id;
 
+                // Save user to firebase
                 addContactToFirebase();
 
+                // Display text based on which layout is the return layout (next).
                 Toast toast = Toast.makeText(this, getSaveText(), Toast.LENGTH_SHORT);
                 toast.show();
                 navController.navigate(next);
 
+                // Intention: set text on layout to enteted values. Didn't get time to implement correctly
 //                ((TextView) findViewById(R.id.textView8)).setText("Name: " + name);
 //                ((TextView) findViewById(R.id.textView10)).setText("Phone: " + String.valueOf(phone));
 //                ((TextView) findViewById(R.id.textView9)).setText("Email: " + email);
             } else {
+                // Display error message
                 Toast toast = Toast.makeText(this, "Error: Please enter all required fields!", Toast.LENGTH_SHORT);
                 toast.show();
             }
     }
 
+    // If the button is pressed to add a new contact, go to edit contact layout
     public void clickAddContact(View view){
         previous = R.id.navigation_contacts;
         next = R.id.navigation_ind_contact;
@@ -156,18 +174,22 @@ public class MainActivity extends AppCompatActivity {
         navController.navigate(R.id.navigation_edit_contact);
     }
 
+    // depending on (next) value, return string based on boolean values of editmode and profile.
     public String getSaveText(){
         return editMode ? ( profile ? "Profile updated successfully!" : "Contact updated successfully!") : "Contact created successfully!";
     }
 
+    // Post contacts to firebase
     private void addContactToFirebase() {
         try {
+            // Retrieve contacts from firebase, to determine if any have been added since
             getContacts();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // Save contacts to firebase
         usersRef.setValue(contacts, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
@@ -180,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Gather contacts from the server and update local variable
     private void getContacts() throws IOException {
       /*  // asynchronously retrieve the document
                 ApiFuture<DocumentSnapshot> future = usersRef.get();
@@ -196,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
 */
     }
 
+    // Add individual message to firebase
     private void addMessagetoFirebase() {
 
         messageRef.setValue(messages, new DatabaseReference.CompletionListener() {
@@ -210,13 +234,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Take registered customer and save them to contacts
     public void registerClient(Contact contact) {
         usersRef = database.getReference("Contacts");
         contacts.add(contact);
         addContactToFirebase();
     }
 
-
+    // Retrieve data from firebase for use in the application
     public void getInfo(View view) throws IOException {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("/Contacts/0");

@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
     }
-
+    // When user clicks on the Sign In button, perform this task
     public void LogInClick(View view){
         // Check login info
         startActivity(new Intent(this, MainActivity.class));
@@ -31,8 +31,8 @@ public class LoginActivity extends AppCompatActivity {
             System.out.println("Password:" + pass);
             System.out.println("Email:" + email);
 
+            // Validate login (not implemented yet)
             if (true) {
-
                 startActivity(new Intent(this, MainActivity.class));
             } else {
                 Toast toast = Toast.makeText(this, "Error: invalid credentials", Toast.LENGTH_SHORT);
@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    // User clicks on register button
     public void registerClick(View view){
         startActivity(new Intent(this, RegisterActivity.class));
     }

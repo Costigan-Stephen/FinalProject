@@ -14,7 +14,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.finalproject.MainActivity;
 import com.example.finalproject.R;
 import com.example.finalproject.databinding.FragmentEditContactBinding;
-import com.example.finalproject.ui.contactedit.ContactEditViewModel;
 
 public class ContactEditFragment extends Fragment {
 
@@ -30,15 +29,21 @@ public class ContactEditFragment extends Fragment {
 
 
         root = inflater.inflate(R.layout.fragment_edit_contact, container, false);
+
+        // base navigation around what boolean values are stored in main
         if(((MainActivity)getActivity()).editMode) {
+            // Change text and button based on which is true
             if(((MainActivity)getActivity()).profile) {
+                // editing user
                 ((TextView) root.findViewById(R.id.edit_contact)).setText("Edit Profile");
                 ((Button) root.findViewById(R.id.button2)).setText("Update Profile");
             } else {
+                // editing contact
                 ((TextView) root.findViewById(R.id.edit_contact)).setText("Edit Contact");
                 ((Button) root.findViewById(R.id.button2)).setText("Update Contact");
             }
         } else {
+            // creating a new contact
             ((TextView) root.findViewById(R.id.edit_contact)).setText("New Contact");
             ((Button) root.findViewById(R.id.button2)).setText("Save Contact");
         }

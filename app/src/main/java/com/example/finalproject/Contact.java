@@ -1,8 +1,5 @@
 package com.example.finalproject;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class Contact {
     public long id;
     public static String name;
@@ -21,22 +18,6 @@ public class Contact {
     }
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public long getPhone(){
-        return phone;
-    }
-
-    public void setPhone(int phone) {
-        this.phone = phone;
     }
 
     public Contact(String name, String email, String password){
