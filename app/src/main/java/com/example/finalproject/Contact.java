@@ -31,7 +31,7 @@ public class Contact {
         this.email = email;
     }
 
-    public int getPhone(){
+    public long getPhone(){
         return phone;
     }
 
