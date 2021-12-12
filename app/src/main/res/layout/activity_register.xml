@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.27" />
 
     <EditText
-        android:id="@+id/inputPassword"
+        android:id="@+id/inputUser"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -60,13 +60,13 @@
         android:paddingBottom="10dp"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="@+id/inputPassword"
+        app:layout_constraintEnd_toEndOf="@+id/inputUser"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/inputPassword"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+        app:layout_constraintStart_toStartOf="@+id/inputUser"
+        app:layout_constraintTop_toBottomOf="@+id/inputUser" />
 
     <EditText
-        android:id="@+id/inputPassword2"
+        android:id="@+id/inputPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -104,10 +104,10 @@
         android:paddingBottom="10dp"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="@+id/inputPassword"
+        app:layout_constraintEnd_toEndOf="@+id/inputUser"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/inputPassword"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword2" />
+        app:layout_constraintStart_toStartOf="@+id/inputUser"
+        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
 
     <Button
         android:id="@+id/btnRegister"
